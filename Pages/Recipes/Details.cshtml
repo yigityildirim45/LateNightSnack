@@ -1,0 +1,101 @@
+@page "{id:int}"
+@model LateNightSnack.Pages.Recipes.DetailsModel
+@{
+    ViewData["Title"] = Model.Recipe?.Title;
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-lg">
+                <div class="recipe-image">
+                    <img src="@Model.Recipe?.ImageUrl" class="img-fluid" alt="@Model.Recipe?.Title">
+                </div>
+                <div class="card-body">
+                    <nav aria-label="breadcrumb" class="mb-4">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/"><i class="bi bi-house"></i> Ana Sayfa</a></li>
+                            <li class="breadcrumb-item active">@Model.Recipe?.Title</li>
+                        </ol>
+                    </nav>
+
+                    <h1 class="display-5 mb-4">
+                        <i class="bi bi-bookmark-star-fill text-warning"></i>
+                        @Model.Recipe?.Title
+                    </h1>
+
+                    <div class="recipe-meta mb-4">
+                        <span class="badge bg-primary me-2">
+                            <i class="bi bi-clock"></i> @Model.Recipe?.GetPrepTimeDisplay()
+                        </span>
+                        <span class="badge bg-secondary">
+                            <i class="bi bi-calendar"></i> @Model.Recipe?.CreatedDate.ToString("dd MMMM yyyy")
+                        </span>
+                    </div>
+
+                    <p class="lead mb-5">@Model.Recipe?.Description</p>
+
+                    <div class="row mb-5">
+                        <div class="col-md-6 mb-4 mb-md-0">
+                            <div class="ingredients-section">
+                                <h3 class="mb-3">
+                                    <i class="bi bi-list-check text-primary"></i> 
+                                    Malzemeler
+                                </h3>
+                                <ul class="list-group list-group-flush">
+                                    @foreach (var ingredient in Model.Recipe?.GetIngredientsList() ?? Array.Empty<string>())
+                                    {
+                                        <li class="list-group-item">
+                                            <i class="bi bi-check2-circle text-success"></i>
+                                            @ingredient
+                                        </li>
+                                    }
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="instructions-section">
+                                <h3 class="mb-3">
+                                    <i class="bi bi-123 text-primary"></i> 
+                                    Hazırlanışı
+                                </h3>
+                                <ol class="list-group list-group-numbered">
+                                    @foreach (var step in Model.Recipe?.GetInstructionSteps() ?? Array.Empty<string>())
+                                    {
+                                        <li class="list-group-item d-flex">
+                                            <span class="ms-2">@step</span>
+                                        </li>
+                                    }
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-between align-items-center">
+                        <a href="/" class="btn btn-outline-primary">
+                            <i class="bi bi-arrow-left"></i> Tariflere Dön
+                        </a>
+                        <div>
+                            <a href="#" class="btn btn-outline-success me-2">
+                                <i class="bi bi-pencil"></i> Düzenle
+                            </a>
+                            <button type="button" class="btn btn-outline-danger">
+                                <i class="bi bi-trash"></i> Sil
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.list-group-item').forEach((item, index) => {
+                item.style.setProperty('--animation-order', index);
+            });
+        });
+    </script>
+} 

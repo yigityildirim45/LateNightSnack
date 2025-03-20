@@ -1,0 +1,45 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\yigit\\OneDrive\\Masaüstü\\LateNightSnack\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\yigit\\OneDrive\\Masaüstü\\LateNightSnack\\wwwroot\\images\\recipes\\biber-mezesi.jpg",
+      "PackagePath": "staticwebassets\\images\\recipes\\biber-mezesi.jpg"
+    },
+    {
+      "Id": "C:\\Users\\yigit\\OneDrive\\Masaüstü\\LateNightSnack\\wwwroot\\images\\recipes\\dondurma.jpg",
+      "PackagePath": "staticwebassets\\images\\recipes\\dondurma.jpg"
+    },
+    {
+      "Id": "C:\\Users\\yigit\\OneDrive\\Masaüstü\\LateNightSnack\\wwwroot\\images\\recipes\\havuclu-tarator.jpg",
+      "PackagePath": "staticwebassets\\images\\recipes\\havuclu-tarator.jpg"
+    },
+    {
+      "Id": "C:\\Users\\yigit\\OneDrive\\Masaüstü\\LateNightSnack\\wwwroot\\images\\recipes\\patlican-ezmesi.jpg",
+      "PackagePath": "staticwebassets\\images\\recipes\\patlican-ezmesi.jpg"
+    },
+    {
+      "Id": "C:\\Users\\yigit\\OneDrive\\Masaüstü\\LateNightSnack\\wwwroot\\images\\recipes\\yogurtlu-semizotu.jpg",
+      "PackagePath": "staticwebassets\\images\\recipes\\yogurtlu-semizotu.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.LateNightSnack.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.LateNightSnack.props",
+      "PackagePath": "build\\LateNightSnack.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.LateNightSnack.props",
+      "PackagePath": "buildMultiTargeting\\LateNightSnack.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.LateNightSnack.props",
+      "PackagePath": "buildTransitive\\LateNightSnack.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

@@ -1,0 +1,75 @@
+@page
+@model LateNightSnack.Pages.Recipes.CreateModel
+@{
+    ViewData["Title"] = "Yeni Tarif Ekle";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-lg">
+                <div class="card-body">
+                    <h1 class="card-title mb-4">
+                        <i class="bi bi-plus-circle"></i> Yeni Tarif Ekle
+                    </h1>
+
+                    <form method="post">
+                        <div class="mb-4">
+                            <label asp-for="Recipe.Title" class="form-label">Tarif Başlığı</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-pencil"></i></span>
+                                <input asp-for="Recipe.Title" class="form-control" placeholder="Örn: Gece Makarnası" />
+                            </div>
+                            <span asp-validation-for="Recipe.Title" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-4">
+                            <label asp-for="Recipe.Description" class="form-label">Açıklama</label>
+                            <textarea asp-for="Recipe.Description" class="form-control" rows="3" 
+                                    placeholder="Tarifiniz hakkında kısa bir açıklama yazın"></textarea>
+                            <span asp-validation-for="Recipe.Description" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-4">
+                            <label asp-for="Recipe.Ingredients" class="form-label">Malzemeler</label>
+                            <textarea asp-for="Recipe.Ingredients" class="form-control" rows="5" 
+                                    placeholder="Her malzemeyi yeni bir satıra yazın. Örnek:
+2 yumurta
+1 su bardağı un
+1/2 çay kaşığı tuz"></textarea>
+                            <span asp-validation-for="Recipe.Ingredients" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-4">
+                            <label asp-for="Recipe.Instructions" class="form-label">Hazırlanışı</label>
+                            <textarea asp-for="Recipe.Instructions" class="form-control" rows="5" 
+                                    placeholder="Her adımı yeni bir satıra yazın. Örnek:
+Yumurtaları bir kaseye kırın ve çırpın.
+Unu ekleyip karıştırın.
+Tuzu ekleyin ve tekrar karıştırın."></textarea>
+                            <span asp-validation-for="Recipe.Instructions" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-4">
+                            <label asp-for="Recipe.PrepTime" class="form-label">Hazırlanma Süresi (dakika)</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-clock"></i></span>
+                                <input asp-for="Recipe.PrepTime" class="form-control" type="number" min="1" />
+                            </div>
+                            <span asp-validation-for="Recipe.PrepTime" class="text-danger"></span>
+                        </div>
+
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary btn-lg">
+                                <i class="bi bi-save"></i> Tarifi Kaydet
+                            </button>
+                            <a href="/" class="btn btn-outline-secondary">
+                                <i class="bi bi-x-circle"></i> İptal
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 

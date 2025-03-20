@@ -1,0 +1,358 @@
+:root {
+    --primary-color: #222831;
+    --secondary-color: #393E46;
+    --accent-color: #00ADB5;
+    --light-color: #EEEEEE;
+    --shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--light-color);
+}
+
+/* Navbar Stilleri */
+.navbar {
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color)) !important;
+    margin-bottom: 2rem;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.nav-link {
+    font-weight: 500;
+    padding: 0.5rem 1rem !important;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    transform: translateY(-2px);
+}
+
+/* Kart Stilleri */
+.card {
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: var(--shadow);
+    background: #fff;
+    height: 100%;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.card-title {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.card-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Recipe Grid */
+.recipe-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    margin-bottom: 2rem;
+}
+
+/* Badge Stilleri */
+.badge {
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    border-radius: 50px;
+}
+
+.badge i {
+    margin-right: 0.3rem;
+}
+
+/* Buton Stilleri */
+.btn {
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn i {
+    margin-right: 0.3rem;
+}
+
+.btn-primary {
+    background: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.btn-primary:hover {
+    background: #009199;
+    border-color: #009199;
+    transform: translateY(-2px);
+}
+
+.btn-info {
+    background: var(--secondary-color);
+    border-color: var(--secondary-color);
+    color: white;
+}
+
+.btn-info:hover {
+    background: #2a2f35;
+    border-color: #2a2f35;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Footer */
+.footer {
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 2rem 0;
+    margin-top: 3rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1rem;
+    }
+    
+    .recipe-grid {
+        gap: 1rem;
+    }
+    
+    .card-body {
+        padding: 1rem;
+    }
+    
+    .badge {
+        display: inline-block;
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* Animasyonlar */
+@keyframes fadeIn {
+    from { 
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Detay Sayfası Stilleri */
+.recipe-meta .badge {
+    font-size: 0.9rem;
+    padding: 0.8rem 1.2rem;
+    border-radius: 25px;
+}
+
+.ingredients-section, .instructions-section {
+    background-color: white;
+    border-radius: 15px;
+    padding: 2rem;
+    height: 100%;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+}
+
+.ingredients-section:hover, .instructions-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.list-group-item {
+    border: none;
+    background: transparent;
+    padding: 1rem 0;
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+}
+
+.list-group-numbered > .list-group-item::before {
+    color: var(--accent-color);
+    font-weight: bold;
+    opacity: 1 !important;
+}
+
+.list-group-item {
+    animation: fadeIn 0.5s ease-out forwards;
+    animation-delay: calc(var(--animation-order, 0) * 0.1s);
+}
+
+.list-group-item i {
+    margin-right: 0.8rem;
+}
+
+/* Breadcrumb Stilleri */
+.breadcrumb {
+    background: transparent;
+    padding: 0;
+}
+
+.breadcrumb-item a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.breadcrumb-item a:hover {
+    color: var(--secondary-color);
+}
+
+.breadcrumb-item.active {
+    color: var(--secondary-color);
+}
+
+/* Detay Sayfası Animasyonları */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.display-5 {
+    animation: slideIn 0.5s ease-out forwards;
+}
+
+.recipe-meta {
+    animation: fadeIn 0.5s ease-out 0.2s forwards;
+    opacity: 0;
+}
+
+.lead {
+    animation: fadeIn 0.5s ease-out 0.3s forwards;
+    opacity: 0;
+    color: var(--secondary-color);
+}
+
+/* Detay Sayfası Responsive */
+@media (max-width: 768px) {
+    .ingredients-section, .instructions-section {
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .list-group-item {
+        font-size: 1rem;
+        padding: 0.75rem 0;
+    }
+}
+
+/* Detay Sayfası Buton Stilleri */
+.btn-outline-primary:hover,
+.btn-outline-success:hover,
+.btn-outline-danger:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Liste öğeleri için metin rengi */
+.list-group-item {
+    border: none;
+    background: transparent;
+    padding: 1rem 0;
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+}
+
+/* Tarif açıklaması için metin rengi */
+.lead {
+    color: var(--secondary-color);
+}
+
+/* Malzemeler ve hazırlanış başlıkları için renk */
+.ingredients-section h3,
+.instructions-section h3 {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+/* Malzeme listesi öğeleri için özel stil */
+.ingredients-section .list-group-item {
+    color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    opacity: 1;
+}
+
+/* Hazırlanış adımları için özel stil */
+.instructions-section .list-group-item {
+    color: var(--secondary-color);
+    line-height: 1.6;
+    opacity: 1;
+}
+
+/* Badge stilleri */
+.badge.bg-primary {
+    background-color: var(--accent-color) !important;
+}
+
+.badge.bg-secondary {
+    background-color: var(--secondary-color) !important;
+}
+
+/* Buton renkleri */
+.btn-outline-primary {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+/* Resim stilleri */
+.card-img-wrapper {
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.card:hover .card-img-top {
+    transform: scale(1.05);
+}
+
+.recipe-image {
+    height: 400px;
+    overflow: hidden;
+    border-radius: 15px 15px 0 0;
+}
+
+.recipe-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+} 
